@@ -1,0 +1,5 @@
+<decorators defaultdir="/WEB-INF/view/admin">
+    <decorator name="default" page="admin_template.jsp">
+        <pattern>/admin/*</pattern>
+    </decorator>
+</decorators>

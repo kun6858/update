@@ -1,0 +1,332 @@
+body {	/* font-family: tahoma, helvetica, arial, sans-serif; */ text-align: center; color: #6f6f6f; }
+body { background: #373839; padding-bottom: 12px; }
+html, body, #wrapper, h1, #nav, #nav ul, #nav li { margin: 0; padding: 0;	list-style: none; }
+body, th, td {	font-size: 12px; }
+img { border: 0; }
+#wrapper {	margin: 16px auto;	text-align: left;	position: relative; }
+h1, h2, h3 { font-size: 20px; color: #f5f5f5;}
+h1 { margin: 0; padding: 0; }
+h1 { margin-bottom: 2px; }
+h2 { margin: 0 0 5px 0; padding: 0; }
+h3 { padding: 4px 0 0 0; }
+a {	color: #f5f5f5; }
+a:hover { text-decoration: none; }
+p { margin: 1em 0; padding: 0; }
+.block { display: block; }
+.clear { clear: both; height: 1px; padding-top: 0; margin-top: 0; margin-bottom: 0;	font-size: 1px;	line-height: 1px; }
+* html .clear {	margin-top: -5px; margin-bottom: -4px; }
+.left {	float: left; margin: 1px 12px 0px 0px; }
+.softright { text-align: right; }
+.leftText { text-align: left; }
+
+#wrapper {
+	width: 1350px;
+}
+
+/* navigation */
+
+#nav {
+	position: absolute;
+	top: 0px;
+	right: 750px;
+	width: 31em;
+}
+
+#nav li {
+	width: 7em;
+	float: left;
+	margin: 0 0.3em;
+	padding: 0;
+}
+
+#nav a {
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 4px 0;
+	display: block;
+	text-align: center;
+}
+
+#nav a:hover {
+	text-decoration: underline;
+}
+
+#nav li.a   { background: url(../images/menu_a_bg.gif) no-repeat; }
+#nav li.a a { background: url(../images/menu_a_r.gif)  top right no-repeat; }
+#nav li.b   { background: url(../images/menu_b_bg.gif) no-repeat; }
+#nav li.b a { background: url(../images/menu_b_r.gif)  top right no-repeat; }
+#nav li.c   { background: url(../images/menu_c_bg.gif) no-repeat; }
+#nav li.c a { background: url(../images/menu_c_r.gif)  top right no-repeat; }
+#nav li.d   { background: url(../images/menu_d_bg.gif) no-repeat; }
+#nav li.d a { background: url(../images/menu_d_r.gif)  top right no-repeat; }
+
+
+/* bodyWrapper */
+#bodyWrapper {
+	width: 100%;
+}
+
+#bodyWrapper { 
+	background: #ed8601; 
+	padding: 8px;
+	color: #f5f5f5;
+	border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
+}
+
+#bodyWrapper p {
+	margin: 1em 0;
+}
+
+/* body */
+#body {
+	color: #f7f7f7;
+	width: 99%;
+	padding: 5px;
+	background-color: #cd7400;
+	border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px;
+}
+
+#body h2 {
+	/* text-decoration : underline; */
+	font-size: 13px;
+	color: #ffea00;
+}
+
+/* information */
+#information {
+	border-collapse:collapse;
+	width: 100%;
+}
+
+#information #errorTd { text-align: center; font-weight: bold; height: 200px;}
+
+#information th, #information td {
+	border-bottom: 1px dashed #556354;
+	border-right: 1px dashed #556354;
+	padding: 10px 4px 10px 4px;
+	text-align: center;
+	position: relative;
+}
+
+#information tfoot td {
+	border-top: 1px dashed #556354;
+}
+
+#information td:last-child { text-align: left; }
+
+#information th:last-child, #information td:last-child {
+	border-right: none;
+}
+
+#information tr:last-child > td {
+	border-bottom: none;
+}
+
+.stateOk { color: blue; }
+.stateHalt { color: #d60000; }
+.stateDeleted { color: brown; text-decoration: line-through; }
+.stateNotReg { color: green; }
+.hourUse { color: green; }
+.hourNotUse { text-decoration: line-through; }
+
+#information #serverPanel { text-align: left; }
+span#packageMemo { margin-left: 10px; }
+
+/* form */
+input, select, button, textarea {
+	border: 2px solid #864e14;
+	padding: 3px 5px 3px 5px;
+	background-color: #fff0dc;
+	font-size: 9pt;
+	margin: 0px;
+}
+
+
+
+textarea { width: 85%; height: 100% }
+input { width: 85%; }
+button { cursor: pointer; margin: 1px;}
+button span.stateHalt { text-decoration: line-through; } /* 중지 상태 */
+button#register { font-weight: bold; }
+.deleteHour { cursor: pointer; }
+.resetHour { cursor: pointer; }
+.resetHour:HOVER { text-decoration: underline; }
+.deleteHour:HOVER { text-decoration: underline; }
+.btnVersion {margin-left: 5px;}
+.fileUpload { width:80%; padding:0px; margin:0px; }
+.PlusMinus { width: 20px; }
+
+input.fileUpload {
+	color: #333333;
+	display: inline;
+	width:70%;
+}
+
+#fileUploadSubmit {
+	width:50px;
+}
+
+#fileInputDiv {
+	text-align: right;
+	float:right;
+	width: 420px;
+}
+#fileInputDiv input[type=file] {
+	width: 200px;
+}
+
+/* 파일 업로드 퍼센트 표시 */
+#fileInputDiv #progressBar{display: none; margin-top: 5px; position: absolute; width:138px;height:3px;padding:5px 6px;background:url(http://static.naver.com/common/loading/bg_loading.gif) no-repeat}
+#fileInputDiv #progressBar span{display:block;height:3px;background:url(http://static.naver.com/common/loading/img_loading.gif) 0 repeat;font-size:0}
+
+/* footer */
+#footer {
+	margin-top: 3px;
+	text-align: center;
+}
+
+#footer, #footer a {
+	font-weight: normal;
+	font-size: 9px;
+	color: #864e14;
+}
+
+#footer a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+/* hour layer */
+#hourLayer {
+	display: none;
+	width: 300px;
+	padding: 10px;
+	background-color: #8c948a;
+	border: 7px solid #495450;
+	border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
+	position: absolute; left:300px; top:-35px;
+	z-index: 500;
+}
+
+#hourLayer table { 	border-collapse:collapse; width: 100%; }
+#hourLayer td, #hourLayer th { padding: 5px; }
+#hourLayer h3 { font-size: 13px; text-align: center; padding: 3px; margin:0px; }
+
+#hourLayer input, #hourLayer select, #hourLayer button {
+	border: 1px solid #495450;
+	padding: 3px 5px 3px 5px;
+	background-color: #f2f2f2;
+	font-size: 9pt;
+	margin: 0px;
+}
+
+#hourLayer #regHour {
+	width: 30%;
+	padding: 4px;
+	font-weight: bold;
+}
+
+#hourLayer #closeHourLayer {
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	width: 20px;
+	text-align: center;
+	margin:0;
+	padding:2px;
+	border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px; 
+}
+
+#reserveFileLayer {
+	display: none;
+	padding: 10px;
+	background-color: #8c948a;
+	border: 7px solid #495450;
+	border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
+	z-index: 500;
+	color: white;
+	width: 1100px;
+}
+
+#reserveFileLayer input, #reserveFileLayer select, #reserveFileLayer button, #reserveFileLayer textarea {
+	border: 1px solid #495450;
+	padding: 3px 5px 3px 5px;
+	background-color: #f2f2f2;
+	font-size: 9pt;
+	margin: 0px;
+	
+}
+
+#reserveFileLayer #resUploadInput {
+	color: #333333; 
+	width: 180px;
+}
+
+#reserveFileLayer table { border-collapse:collapse; width: 100%; }
+#reserveFileLayer td, #reserveFileLayer th { padding: 5px; }
+#reserveFileLayer h3 { font-size: 13px; text-align: center; padding: 3px; margin:0px; }
+
+#reserveFileLayer th, #reserveFileLayer td {
+	border-bottom: 1px dashed #556354;
+	border-right: 1px dashed #556354;
+	padding: 10px 4px 10px 4px;
+	text-align: center;
+	position: relative;
+}
+
+#reserveFileLayer tfoot td {
+	border-top: 1px dashed #556354;
+}
+
+#reserveFileLayer th:last-child, #reserveFileLayer td:last-child {
+	border-right: none;
+}
+
+#reserveFileLayer h3 {
+	font-size : 15px;
+	position: absolute;
+}
+
+#reserveFileLayer #closeReserveFileLayer {
+	float: right;
+	width: 20px;
+	text-align: center;
+	margin:0;
+	padding:2px;
+	border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px;
+	clear:both; 
+}
+
+#reserveFileLayer #reserveUploadLayer {
+	text-align: left;	
+	margin-right: 30px;
+}
+
+#reserveFileLayer #reserveUploadLayer input[type=file] {
+	width: 250px;
+}
+
+#reserveFileLayer #reserveUploadLayer input[type=submit] {
+	width: 55px;
+}
+
+#reserveFileLayer button {
+	margin: 2px;
+}
+
+/* ajax loading */
+#loading {
+	position: absolute;
+	top: 30%;
+	left: 45%;
+    width: 110px;
+    filter:alpha(opacity=60); /* IE's opacity*/
+    opacity: 0.60;
+    display: none;
+    z-index: 999;
+}
+
+#loading img {
+	width: 110px;
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+    <filter>
+        <filter-name>sitemesh</filter-name>
+        <filter-class>
+            com.opensymphony.module.sitemesh.filter.PageFilter
+        </filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>sitemesh</filter-name>
+        <url-pattern>/admin/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+    <filter>
+    	<filter-name>loginCheckFilter</filter-name>
+    	<filter-class>
+    		com.byto.filter.LoginCheckFilter
+    	</filter-class>
+    </filter>
+    
+    <filter-mapping>
+    	<filter-name>loginCheckFilter</filter-name>
+    	<url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+            /WEB-INF/dispatcher-servlet.xml
+        </param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<!-- <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> -->
+		<servlet-class>DispatcherServletV2</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>*.byto</url-pattern>
+	</servlet-mapping>
+</web-app>
